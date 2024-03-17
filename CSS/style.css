@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white-color: #ffffff;
+    ---black-color: #000000;
+    --primary-color: #3b5d50;
+    --secondary-color: #f9bf29;
+    --dark-color: #2f2f2f;
+    --light-color: #dce5e4;
+    --lighter-color: #eff2f1;
+    --body_color: #6a6a6a;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    line-height: 28px;
+    color: #6a6a6a;
+    font-size: 14px;
+    background-color: #eff2f1 !important;
+
+}
+
+/* 
+<--======================
+Header section design
+=========================-->
+*/
+.custom-navbar {
+    padding: 10px 0 !important;
+    background: var(--primary-color) !important;
+}
+
+.navbar-brand {
+    color: var(--white-color) !important;
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+}
+
+.navbar-brand span {
+    opacity: .4 !important;
+}
+
+
+.nav-link {
+    color: var(--white-color) !important;
+    opacity: .4;
+    font-weight: 600 !important;
+    margin: 0 15px;
+    position: relative;
+    transition: .4s ease-in-out;
+    padding: 5px 3px !important;
+}
+
+.activee {
+    color: var(--white-color) !important;
+    opacity: 1;
+}
+
+.nav-link:hover {
+    color: var(--white-color) !important;
+    opacity: 1;
+}
+
+.nav-link::after,
+.activee::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    bottom: -7px;
+    background: #f9bf29;
+    height: 5px;
+    opacity: 1;
+    visibility: visible;
+    width: 0;
+    -webkit-transition: .15s all ease-out;
+    -o-transition: .15s all ease-out;
+    transition: .15s all ease-out;
+}
+
+.nav-link:hover::after,
+.activee::after {
+    width: 100%;
+}
+
+.cartIcon {
+    margin: 0 10px;
+}
+
+/* 
+<--======================
+Hero section design
+=========================-->
+*/
+
+#home {
+    background-color: var(--primary-color);
+    /* padding: 5rem 0; */
+}
+
+.hero-heading {
+    padding: 3rem 0;
+    color: var(--white-color);
+}
+
+.hero-heading h1 {
+    font-size: 55px;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.hero-heading p {
+    opacity: .7;
+}
+
+.shopBtn {
+    display: flex;
+    align-items: center;
+}
+
+.comBtn {
+    padding: 10px 35px;
+    color: var(--white-color);
+    outline: none;
+    border-radius: 10px;
+    background: var(---black-color);
+    font-weight: 500
+}
+
+.shopBtn .btn {
+    padding: 10px 35px;
+    margin: 0 10px;
+    color: var(--white-color);
+    outline: none;
+    border: 1px solid #f9bf29;
+    border-radius: 10px;
+    background: transparent;
+    font-weight: 500;
+}
+
+.shopBtn .btn:first-child {
+    background: var(--secondary-color);
+    transition: all .4s ease-in-out;
+}
+
+.shopBtn .btn:first-child:hover {
+    background: #ebb93d;
+    color: var(--white-color);
+}
+
+.shopBtn .btn:last-child {
+    background: transparent;
+    color: var(--white-color);
+    border: 1px solid #f9f6ee;
+}
+
+/* .rotateImg {
+    animation: rotateAnimation 5s linear infinite
+}
+
+@keyframes rotateAnimation {
+    form {
+        transform: translateY(10px);
+    }
+
+    to {
+        transform: translateY(-10px);
+    }
+} */
+
+
+
+
+/* 
+<--======================
+product section design
+=========================-->
+*/
+#products {
+    background: #6a6a6a;
+}
+
+.productsHeading h1 {
+    color: #2e2e2e;
+    letter-spacing: 1px;
+    line-height: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 1.3rem;
+}
+
+.productsHeading p {
+    color: #6a6a6a;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.productItem {
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.productItem h2 {
+    color: #2e2e2e;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.productPrice {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(---black-color);
+}
+
+.crossIcon {
+    height: 35px;
+    width: 35px;
+    background: var(---black-color);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0px;
+    visibility: hidden;
+    transition: all .4s ease-in-out;
+}
+
+.productItem::after {
+    position: absolute;
+    content: "";
+    background: #dce5e4;
+    height: 0;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 10px;
+    transition: all .4s ease-in-out;
+}
+
+.productItem:hover:after {
+    height: 70%;
+}
+
+.productImg {
+
+    transition: all .4s ease-in-out;
+}
+
+.productItem:hover .productImg {
+    transform: translateY(-30px);
+}
+
+.productItem:hover .crossIcon {
+    visibility: visible;
+    bottom: -15px;
+}
+
+
+
+/* 
+<--======================
+Chose US section design
+=========================-->
+*/
+
+.aboutHeading h1 {
+    font-size: 33px;
+    margin-bottom: 20px;
+}
+
+.aboutHeading p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.feature {
+    margin: 10px 5px;
+    padding: 10px 0;
+    background: #dce5e4;
+    border-radius: 10px;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+}
+
+.feature:hover {
+    transform: translateY(-7px);
+}
+
+.feature h4 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.feature p {
+    width: 100%;
+    color: var(--dark-color);
+}
+
+.imgWrapper {
+    position: relative;
+}
+
+.imgWrapper img {
+    border-radius: 20px;
+}
+
+.imgWrapper::before {
+    position: absolute;
+    content: "";
+    background: url(../images/dots-yellow.svg);
+    width: 200px;
+    height: 200px;
+    left: -30px;
+    top: -30px;
+    z-index: -1;
+
+}
+
+
+/* 
+<--======================
+we can Help section design
+=========================-->
+*/
+.helpSec {
+    display: flex;
+    gap: 0 10px;
+}
+
+.circuleIcon {
+    height: 35px;
+    width: 35px;
+}
+
+.carsusolCon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dce5e4;
+    border-radius: 10px;
+    padding: 10px 0;
+}
+
+
+
+.carsusolImg img {
+    width: 150px;
+    height: 170px;
+}
+
+.readmoreBtn svg {
+    height: 20px;
+    width: 20px;
+}
+
+.readmoreBtn {
+    border: none;
+    background: transparent;
+    transition: all .4s ease-in-out;
+}
+
+.readmoreBtn:hover {
+    letter-spacing: 1px;
+}
+
+/* 
+<--======================
+Carsusol section design
+=========================-->
+*/
+
+/*
+<--======================
+blog section design
+=========================-->
+*/
+.blogSection {
+    background: #dce5e4;
+}
+
+.blogData {
+    padding: 1.5rem 0;
+}
+
+.blogImg img {
+    border-radius: 10px;
+}
+
+.blogData span {
+    color: var(---black-color);
+    font-weight: 500;
+}
+
+/*
+<--======================
+Newsletter section design
+=========================-->
+*/
+#newsLetter {
+    padding: 5rem;
+    background: var(--white-color);
+}
+
+.newsletter {
+    display: flex;
+    align-items: center;
+}
+
+.newsletter img {
+    width: 60px;
+    height: 40px;
+}
+
+.contactform {
+    display: flex;
+    align-items: center;
+    margin: 15px;
+}
+
+.contactform input {
+    padding: 7px 40px;
+    margin-right: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #6a6a6a;
+}
+
+.newslink {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.newslink a {
+    text-decoration: none;
+    margin-top: 10px;
+    color: var(--black-color);
+}
